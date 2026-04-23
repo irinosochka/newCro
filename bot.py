@@ -310,11 +310,11 @@ async def handle_migrate_message(msg: Message):
 
 
 # ─────────────────────────────────────────────────────────────
-# /full_rating — полный рейтинг всех участников
+# /rating_crocFull — полный рейтинг всех участников
 # ─────────────────────────────────────────────────────────────
 
-@dp.message(Command("full_rating"))
-async def cmd_full_rating(msg: Message):
+@dp.message(Command("rating_crocFull"))
+async def cmd_rating_crocFull(msg: Message):
     """Показывает полный рейтинг всех участников (без лимита топ-10)."""
     if not in_correct_topic(msg):
         return
@@ -529,11 +529,11 @@ async def cmd_stop_croc(msg: Message):
 
 
 # ─────────────────────────────────────────────────────────────
-# /rating_croc — топ-10 угадавших
+# /rating_croc10 — топ-10 угадавших
 # ─────────────────────────────────────────────────────────────
 
-@dp.message(Command("rating_croc"))
-async def cmd_rating(msg: Message):
+@dp.message(Command("rating_croc10"))
+async def cmd_rating10(msg: Message):
     if not in_correct_topic(msg):
         return
 
