@@ -297,3 +297,13 @@ def delete_messages_by_range(chat_id: int, topic_id: int, since_timestamp: float
     conn.commit()
     conn.close()
     return affected
+
+def get_user_by_username(chat_id: int, username: str):
+    """Ищет пользователя по username в базе"""
+    conn = get_connection()
+    row = conn.execute(
+        "SELECT user_id, user_name FROM ratings WHERE chat_id = ? AND LOWER(username) = ?",
+        (chat_id, username.lower().replace("@", ""))
+    ).fetchone()
+    conn.close()
+    return row

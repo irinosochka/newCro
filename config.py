@@ -37,12 +37,14 @@ def user_mention(name: str, user_id: int) -> str:
     return f'<a href="tg://user?id={user_id}">{name}</a>'
 
 
-def normalize(text: str) -> str:
+def normalize(text: str | None) -> str:
     """Нормализует строку для сравнения угадывания.
     - регистр не важен
     - е и ё считаются одинаковыми
     - дефис и пробел взаимозаменяемы
     """
+    if not text:
+        return ""
     t = text.strip().lower()
     t = t.replace("ё", "е")
     t = t.replace("-", " ")
