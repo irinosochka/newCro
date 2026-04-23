@@ -1,0 +1,4 @@
+aiogram==3.3.0
+python-dotenv==1.0.0
+pymorphy3==2.2.2
+nltk==3.8.1
